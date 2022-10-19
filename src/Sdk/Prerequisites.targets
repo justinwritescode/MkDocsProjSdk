@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <BinaryExistsTestScript Condition="$([MSBuild]::IsOsPlatform('OSX')) Or $([MSBuild]::IsOsPlatform('Linux'))">if [[ -Z "%24(which {0}|grep {0})" ]]; then echo "false"; else echo "true"; fi</BinaryExistsTestScript>
+    <BinaryExistsTestScript Condition="$([MSBuild]::IsOsPlatform('OSX')) Or $([MSBuild]::IsOsPlatform('Linux'))">if [[ -Z "%24(which {0}|grep {0})" ]]; then echo "false"; else echo "true"; fi</BinaryExistsTestScript>
+  </PropertyGroup>
+  <ItemGroup>
+  
+  </ItemGroup>
+  <Target Name="">
+  
+  </Target>
+</Project>

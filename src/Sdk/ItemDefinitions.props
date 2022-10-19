@@ -1,0 +1,19 @@
+<Project>
+  <ItemDefinitionGroup>
+    <Plugin >
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <Feature >
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <Nav >
+  </ItemDefinitionGroup>
+  <ItemDefinitionGrouo>
+    <BuiltInPlugin Include="search" />
+    <BuiltInPlugin Include="social" />
+    <BuiltInPlugin Include="tags" />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    
+  </ItemGroup>
+</Project>

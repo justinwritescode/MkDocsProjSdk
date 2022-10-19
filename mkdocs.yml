@@ -1,0 +1,170 @@
+site_name: JustinWritesCode Documentation
+site_description: JustinWritesCode Documentation
+site_url: https://justinwritescode.com
+site_author: "Justin Chase"
+repo_url: https://github.com/justinwritescode/justinwritescode
+repo_name: justinwritescode/justinwritescode
+edit_uri: "tree/main/docs"
+docs_dir: docs
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: "./assets/logo.png"
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    scheme: slate
+    primary: blue
+    accent: teal
+features:
+  - navigation.instant
+  - navigation.tracking
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.sections
+  - navigation.expand
+  - navigation.indexes
+  - navigation.top
+  - toc.integrate
+  - search.suggest
+  - search.highlighting
+  - search.share
+  - announce.dismiss
+plugins:
+  - rss:
+      categories: 
+        - tags
+      enabled: true
+      feed_ttl: 1440
+      image:  https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png
+      length: 20
+      pretty_print: false
+      comments_path: "#__comments"
+      date_from_meta:
+        as_creation: "date"
+        as_update: false
+        datetime_format: "%Y-%m-%d %H:%M"
+        default_time: "09:30"
+        default_timezone: "America/New_York"
+      url_parameters:
+        utm_source: "documentation"
+        utm_medium: "rss"
+        utm_campaign: "feed-syndication"
+  - search
+  - blog
+  - tags:
+      tags_file: tags.md
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - macros
+  - categories
+#  - literate-nav      
+  - codeinclude:
+      title_mode: pymdownx.tabbed
+  - section-index
+  - mkdocs-nav-enhancements
+  - gitsnippet
+  - multirepo:
+      cleanup: false
+      repos:
+        - section: nuget-icons
+          import_url: 'https://github.com/justinwritescode/nuget-icons?edit_uri=tree/main/docs'
+        - section: commmon
+          import_url: 'https://github.com/justinwritescode/common?edit_uri=tree/main/docs'
+        - section: dotnet-search
+          import_url: 'https://github.com/justinwritescode/dotnet-search?edit_uri=tree/main/docs'
+        - section: MSBuild.XmlDocMd
+          import_url: 'https://github.com/justinwritescode/MSBuild.XmlDocMd?edit_uri=tree/main/docs'
+        - section: MSBuild.IncludeSdk
+          import_url: 'https://github.com/justinwritescode/MSBuild.IncludeSdk?edit_uri=tree/main/docs'
+        - section: Types
+          import_url: 'https://github.com/justinwritescode/Types?edit_uri=tree/main/docs'
+extra:
+  homepage: https://justinwritescode.com
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/justhorny32
+      name: Justin Chase on Twitter
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/justhorny32
+      name: Justin Chase on Telegram
+  version:
+    provider: mike
+    default: latest
+  analytics:
+    provider: google
+    property: G-JYQ7NBSP4R
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Yes!
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: justinwritescode/man-shrugging-2
+          name: Meh
+          data: 0
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: No!
+          data: -1
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+
+copyright: Copyright &copy; 2022 Justin Chase
+markdown_extensions:
+  - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
+  - abbr
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.details
+  - footnotes
+  - toc:
+      permalink: true
+      title: On this page
+      permalink_title: Anchor link to this section for reference
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 3
+  - tables
+  - md_in_html
+  - attr_list
+  - admonition
+  - abbr
+nav:
+  - Home: index.md
+  - About: README.md
+  # - Documentation:
+  #     - index.md
+  #     - common: '!import https://github.com/justinwritescode/common?branch=main'
+  #     - nuget-icons: '!import https://github.com/justinwritescode/nuget-icons?branch=main'
+  #     - Types: Types
+  #     - dotnet-search: '!import https://github.com/justinwritescode/dotnet-search?branch=1-feat-port-this-to-the-latest-versions-of-net-core'
+  #     - MSBuild.XmlDocMd: '!import https://github.com/justinwritescode/MSBuild.XmlDocMd?branch=main'
+  #     - MSBuild.IncludeSdk: '!import https://github.com/justinwritescode/MSBuild.IncludeSdk?branch=main'
+  - Code of Conduct: CODE_OF_CONDUCT.md
+  - License: LICENSE
+  - Privacy Policy: PRIVACY_POLICY.md
+  - Tags: tags.md
