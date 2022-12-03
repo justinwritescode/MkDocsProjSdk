@@ -1,12 +1,24 @@
 <Project>
   <PropertyGroup>
-    <BinaryExistsTestScript Condition="$([MSBuild]::IsOsPlatform('OSX')) Or $([MSBuild]::IsOsPlatform('Linux'))">if [[ -Z "%24(which {0}|grep {0})" ]]; then echo "false"; else echo "true"; fi</BinaryExistsTestScript>
-    <BinaryExistsTestScript Condition="$([MSBuild]::IsOsPlatform('OSX')) Or $([MSBuild]::IsOsPlatform('Linux'))">if [[ -Z "%24(which {0}|grep {0})" ]]; then echo "false"; else echo "true"; fi</BinaryExistsTestScript>
+    <BinaryExistsTestScript Condition="$([MSBuild]::IsOsPlatform('OSX')) Or $([MSBuild]::IsOsPlatform('Linux'))">{{BINARY}} --version 2>NUL; if [[ $? -eq 0 ]]; then echo "true"; else echo "false"; fi</BinaryExistsTestScript>
+    <BinaryExistsTestScript Condition="$([MSBuild]::IsOsPlatform('Windows'))">{{BINARY}} --version 2>NUL; if [[ $? -eq 0 ]]; then echo "true"; else echo "false"; fi</BinaryExistsTestScript>
   </PropertyGroup>
-  <ItemGroup>
-  
-  </ItemGroup>
-  <Target Name="">
-  
+  <Target Name="EnsurePrerequisites">
+    <ItemGroup>
+      <PrerequisiteBinary Include="python" />
+      <PrerequisiteBinary Include="python3" />
+      <PrerequisiteBinary Include="pip" />
+      <PrerequisiteBinary Include="pip3" />
+    </ItemGroup>
+
+    <Exec Command="$(BinaryExistsTestScript.Replace('{{BINARY}}', @(PrerequisiteBinary)" ConsoleToMSBuild="true">
+      <Output TaskParameter="ConsoleOutput" ItemName="%(PrerequisiteBinary.Exists)" />
+    </Exec>
+
+    <!-- <PropertyGroup>
+      <PythonExists>@(PrerequisiteBinary->AnyHaveMetadataValue()</PythonExists>
+    </PropertyGroup> -->
+    <Python>python3</Ptyhon>
+    <Pip>pip3</Pip>
   </Target>
 </Project>

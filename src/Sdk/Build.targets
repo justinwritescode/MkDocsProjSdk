@@ -1,0 +1,32 @@
+<!--
+ * Build.targets
+ * 
+ *   Created: 2022-11-18-08:24:58
+ *   Modified: 2022-11-18-08:24:58
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+	<Target Name="InstallPlugins" AfterTargets="ValidateProject">
+		<Exec Command="pip install '%(Plugin.Identity)'" 
+			WorkingDirectory="$(MSBuildProjectDirectory)" />
+	</Target>
+	<Target Name="GenerateMkDocsYml">
+		<ItemGroup>
+			<MkDocsLine Include="site_name: $(SiteName)" Condition="'$(SiteName)' != ''" />
+			<MkDocsLine Include="site_description: $(SiteDescription)" Condition="'$(SiteDescription)' != ''" />
+			<MkDocsLine Include="site_url: $(SiteUrl)" Condition="'$(SiteUrl)' != ''" />
+			<MkDocsLine Include="site_author: $(Authors)" Condition="'$(SitAuthorseName)' != ''" />
+			<MkDocsLine Include="repo_url: $(RepositoryUrl)" Condition="'$(RepositoryUrl)' != ''" />
+			<MkDocsLine Include="repo_name: $(RepositoryName)" Condition="'$(RepositoryName)' != ''" />
+			<MkDocsLine Include="edit_uri: $(DocsDir)" Condition="'$(DocsDir)' != ''" />
+			<MkDocsLine Include="docs_dir: $(SiteUrl)" Condition="'$(SiteName)' != ''" />
+			<MkDocsLine Include="site_url: $(SiteUrl)" Condition="'$(SiteName)' != ''" />
+			<MkDocsLine Include="site_url: $(SiteUrl)" Condition="'$(SiteName)' != ''" />
+		</ItemGroup>
+	</Target>
+</Project>

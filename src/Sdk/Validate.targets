@@ -1,0 +1,64 @@
+<!--
+ * Validate.targets
+ * 
+ *   Created: 2022-11-18-07:35:57
+ *   Modified: 2022-11-18-07:35:59
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+	<Target Name="ValidateProject">
+		<Error Condition="'$(Theme)' == ''" Text="Theme name cannot be blank." />
+		<Error Condition="'$(CustomDir)' != '' And !Exists($(CustomDir))" Text="Theme custom directory '$(CustomDir)' does not exist." />
+		<Error Condition="'$(DocsDir)' != '' And !Exists($(DocsDir))" Text="The docs directory '$(DocsDir)' specified does not exist." />
+		<Error Condition="'$(Logo)' != '' And !Exists($(Logo))" Text="The logo specified '$(Logo)' does not exist." />
+		<Error Condition="!@(ColorScheme->AnyHaveMetadataValue('Identity', '$(ColorScheme)'))" Text="The color scheme '$(ColorScheme)' is invalid.  Valid color schemes are @(ColorScheme, '; ')." />
+		<Error Condition="!@(Color->AnyHaveMetadataValue('Identity', '$(PrimaryColor)'))" Text="The selected primary color '$(PrimaryColor)' is invalid.  Valid color schemes are @(Color, '; ')." />
+		<Error Condition="!@(Color->AnyHaveMetadataValue('Identity', '$(AccentColor)'))" Text="The selected accent olor '$(AccentColor)' is invalid.  Valid color schemes are @(Color, '; ')." />
+	</Target>
+</Project>
+<!-- 
+  <ItemGroup>
+    <Color Include="red" />
+    <Color Include="pink" />
+    <Color Include="purple" />
+    <Color Include="deep purple" />
+    <Color Include="indigo" />
+    <Color Include="blue" />
+    <Color Include="light blue" />
+    <Color Include="cyan" />
+    <Color Include="teal" />
+    <Color Include="green" />
+    <Color Include="light green" />
+    <Color Include="lime" />
+    <Color Include="yellow" />
+    <Color Include="amber" />
+    <Color Include="orange" />
+    <Color Include="deep orange" />
+    <Color Include="brown" />
+    <Color Include="grey" />
+    <Color Include="blue grey" />
+    <Color Include="black" />
+    <Color Include="white" />
+  </ItemGroup>
+
+	<ItemDefinitionGroup>
+		<Theme>
+			<Name />
+			<CustomDirectory />
+			<Logo />
+			<Icons>
+				<Repository>fontawesome/brands/github</Repository>
+				<Edit>material/pencil</Edit>
+			</Icons>
+			<Palette>
+				<Scheme />
+				<Primary />
+				<Secondary />
+			</Palette>
+		</Theme>
+	</ItemDefinitionGroup> -->

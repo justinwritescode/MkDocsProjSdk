@@ -5,7 +5,11 @@
   <ItemGroup>
   
   </ItemGroup>
-  <Target Name="">
-  
+  <Target Name="Build">
+		<CallTarget Targets="ValidateProject" />
+		<CallTarget Targets="InstallPlugins" />
+		<CallTarget Targets="GenerateMkDocsYml" />
   </Target>
+	<Import Project="./Prerequisites.targets" />
+	<Import Project="./Build.targets" />
 </Project>

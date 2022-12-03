@@ -1,19 +1,3 @@
-<Project xmlns="../MkDocsProj.xsd">
-  <ItemGroup>
-    <SiteParam Include="site_name" Property="SiteName" Value="MySite" />
-    <SiteParam Include="site_description" Property="SiteDescription" Value="No description" />
-    <SiteParam Include="site_url" Property="SiteUrl" Value="http://localhost:8000/" />
-    <SiteParam Include="site_author" Property="SiteAuthor" Value="Yourself" />
-    <SiteParam Include="repo_url" Property="RepoUrl" Value="https://github.com/Me/MySite.git" />
-    <SiteParam Include="repo_name" Property="RepoName" Value="Me/MySite" />
-    <SiteParam Include="edit_uri" Property="EditUri" Value="/tree/main/docs" />
-    <SiteParam Include="docs_dir" Property="DocsDir" Value="docs" />
-  </ItemGroup>
-  <note>
-    <to>Tove</to>
-    <from>Jani</from>
-  </note>
-  <ItemGroup>
-  
-  </ItemGroup>
+<Project xmlns:mkdocs="../MkDocsProj.xsd">
+	<mkdocs:>
 </Project>

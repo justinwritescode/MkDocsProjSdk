@@ -1,5 +1,36 @@
-<Project>
+<Project InitialTargets="ValidateProject">
+	<Import Project="./Sdk/PropertyDefinitions.props" />
+	<Import Project="./Sdk/ItemDefinitions.props" />
+	<Import Project="./Sdk/Build.targets" />
+	<Import Project="./Sdk/Validate.targets" />
   <PropertyGroup>
-    
-  </PropertyGroup>
+		<DocsDir>docs</DocsDir>
+		<Homepage>https://justinwritescode.com</Homepage>
+	</PropertyGroup>
+	<ItemGroup>
+		<Plugin Include="mkdocs-git-authors-plugin" />
+		<Plugin Include="mkdocs-macros-plugin" />
+		<Plugin Include="mkdocs-codeinclude-plugin" />
+		<Plugin Include="mkdocs-literate-nav" />
+		<Plugin Include="mkdocs-nav-enhancements" />
+	</ItemGroup>
+	<ItemGroup>
+		<Feature Update="navigation.instant" Enabled="true" />
+		<Feature Update="navigation.tracking" Enabled="true" />
+		<Feature Update="navigation.tabs" Enabled="true" />
+		<Feature Update="navigation.tabs.sticky" Enabled="true" />
+		<Feature Update="navigation.sections" Enabled="true" />
+		<Feature Update="navigation.expand" Enabled="true" />
+		<Feature Update="navigation.indexes" Enabled="true" />
+		<Feature Update="navigation.top" Enabled="true" />
+		<Feature Update="toc.integrate" Enabled="true" />
+		<Feature Update="search.suggest" Enabled="true" />
+		<Feature Update="search.highlighting" Enabled="true" />
+		<Feature Update="search.share" Enabled="true" />
+		<Feature Update="announce.dismiss" Enabled="true" />
+	</ItemGroup>
+	<ItemGroup>
+		<SocialLink Include="https://twitter.com/justhorny32" Icon="fontawesome/brands/twitter" Name="Justin Chase on Twitter" />
+		<SocialLink Include="https://t.me/justhorny32" Icon="fontawesome/brands/telegram" Name="Justin Chase on Telegram" />
+	</ItemGroup>
 </Project>

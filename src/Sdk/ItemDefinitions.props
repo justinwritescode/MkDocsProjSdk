@@ -1,19 +1,93 @@
 <Project>
   <ItemDefinitionGroup>
-    <Plugin >
+    <Feature />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
-    <Feature >
+    <Nav />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
-    <Nav >
+    <Plugin Version="" />
   </ItemDefinitionGroup>
-  <ItemDefinitionGrouo>
+
+  <ItemGroup>
     <BuiltInPlugin Include="search" />
     <BuiltInPlugin Include="social" />
     <BuiltInPlugin Include="tags" />
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    
   </ItemGroup>
+
+  <ItemGroup>
+    <ColorScheme Include="default" Selected="true" />
+    <ColorScheme Include="slate" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Color Include="red" />
+    <Color Include="pink" />
+    <Color Include="purple" />
+    <Color Include="deep purple" />
+    <Color Include="indigo" />
+    <Color Include="blue" />
+    <Color Include="light blue" />
+    <Color Include="cyan" />
+    <Color Include="teal" />
+    <Color Include="green" />
+    <Color Include="light green" />
+    <Color Include="lime" />
+    <Color Include="yellow" />
+    <Color Include="amber" />
+    <Color Include="orange" />
+    <Color Include="deep orange" />
+    <Color Include="brown" />
+    <Color Include="grey" />
+    <Color Include="blue grey" />
+    <Color Include="black" />
+    <Color Include="white" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Feature Include="navigation.instant" Enabled="false" />
+		<Feature Include="navigation.tracking" Enabled="false" />
+		<Feature Include="navigation.tabs" Enabled="false" />
+		<Feature Include="navigation.tabs.sticky" Enabled="false" />
+		<Feature Include="navigation.sections" Enabled="false" />
+		<Feature Include="navigation.expand" Enabled="false" />
+		<Feature Include="navigation.indexes" Enabled="false" />
+		<Feature Include="navigation.top" Enabled="false" />
+		<Feature Include="toc.integrate" Enabled="false" />
+		<Feature Include="search.suggest" Enabled="false" />
+		<Feature Include="search.highlighting" Enabled="false" />
+		<Feature Include="search.share" Enabled="false" />
+		<Feature Include="announce.dismiss" Enabled="false" />
+	</ItemGroup>
+
+	<ItemDefinitionGroup>
+		<SocialLink>
+			<Icon />
+			<Name />
+		</SocialLink>
+	</ItemDefinitionGroup>
+
+	<ItemDefinitionGroup>
+			<NavItem>
+				<Title />
+				<Url />
+			</NavItem>
+	</ItemDefinitionGroup>
+
+	<ItemDefinitionGroup>
+		<Theme>
+			<Name>material</Name>
+			<CustomDirectory />
+			<Logo />
+			<Icons>
+				<Repository>fontawesome/brands/github</Repository>
+				<Edit>material/pencil</Edit>
+			</Icons>
+			<Palette>
+				<Scheme />
+				<Primary />
+				<Secondary />
+			</Palette>
+		</Theme>
+	</ItemDefinitionGroup>
 </Project>

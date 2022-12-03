@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <SiteName />
+    <SiteDescription />
+    <SiteUrl />
+		<Authors />
+		<RepositoryUrl />
+		<RepositoryName />
+		<EditUri />
+		<DocsDir>docs</DocsDir>
+    <Logo />
+    <Theme>material</Theme>
+    <CustomDir />
+    <RepositoryIcon>fontawesome/brands/github</RepositoryIcon>
+    <EditIcon>material/pencil</EditIcon>
+    <ColorScheme>default</ColorScheme>
+    <PrimaryColor>blue</PrimaryColor>
+    <AccentColor>teal</AccentColor>
+		<Homepage />
+  </PropertyGroup>
+</Project>
